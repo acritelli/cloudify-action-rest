@@ -24,7 +24,7 @@ Each of these API calls is implemented as its own lifecycle operation in the [sa
 # Usage
 
 1. Create a `github_token` secret in your Cloudify manager with `repo` scope permissions
-2. Upload and execute the blueprint
+2. Upload and execute the blueprint, changing the inputs to match your repository location.
 
 # Caveat
 
