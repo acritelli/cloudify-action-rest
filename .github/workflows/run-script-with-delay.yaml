@@ -1,4 +1,4 @@
-name: run_script_no_args
+name: run_script_with_delay
 on:
   workflow_dispatch:
 jobs:
@@ -8,4 +8,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run script
-        run: ./test_script.sh
+        run: ./workflow_scripts/script_with_delay.sh
