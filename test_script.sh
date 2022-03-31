@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sleep 30
+# sleep 30
 echo "Hello World!"
