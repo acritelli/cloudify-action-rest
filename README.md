@@ -1,6 +1,6 @@
 # cloudify-action-rest
 
-This blueprint example shows how to run a GitHub Actions workflow from Cloudify and wait until it completes. The example blueprint runs the following [workflows](./github/workflows), which are all just simple scripts, one after the other:
+This blueprint example shows how to run a GitHub Actions workflow from Cloudify and wait until it completes. The example blueprint runs the workflows in the .github/workflows directory, which are all just simple scripts, one after the other:
 
 * run-basic-script pipeline: Runs a [basic script](./workflow_scripts/basic_script.sh) that has no delay
 * run-script-with-delay: Runs a [script with an artificial delay](./workflow_scripts/script_with_delay.sh) to demonstrate how the logic works to wait for completion
