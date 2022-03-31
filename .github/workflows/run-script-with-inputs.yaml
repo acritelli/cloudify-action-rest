@@ -10,4 +10,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run script
-        run: ./workflow_scripts/script_with_inputs.sh
+        run: echo "${{ github.event.inputs.message }}"
