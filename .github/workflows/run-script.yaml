@@ -1,5 +1,4 @@
 name: run_script_no_args
-id: run_script_no_args
 on:
   workflow_dispatch:
 jobs:
