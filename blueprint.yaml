@@ -18,7 +18,7 @@ inputs:
 
 node_templates:
 
-  run_workflow:
+  run_simple_workflow:
     type: cloudify.rest.Requests
     properties:
       host: api.github.com
@@ -113,6 +113,9 @@ node_templates:
               repository_name: { get_input: repository_name }
               auth_token: { get_secret: github_token }
               run_id: { get_attribute: [ SELF, workflow_run, result_properties, run_id ] }
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: run_simple_workflow
 
   run_workflow_with_inputs:
     type: cloudify.rest.Requests
@@ -134,7 +137,7 @@ node_templates:
               auth_token: { get_secret: github_token }
         create:
           inputs:
-            template_file: templates/run-workflow.yaml
+            template_file: templates/run-workflow-with-inputs.yaml
             save_path: workflow_run
             params:
               repository_owner: { get_input: repository_owner }
@@ -161,3 +164,6 @@ node_templates:
               repository_name: { get_input: repository_name }
               auth_token: { get_secret: github_token }
               run_id: { get_attribute: [ SELF, workflow_run, result_properties, run_id ] }
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: run_workflow_with_delay
