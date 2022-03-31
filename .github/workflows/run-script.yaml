@@ -8,4 +8,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run script
-        run: pwd && ls
+        run: ./test_script.sh
