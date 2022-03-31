@@ -8,3 +8,5 @@ rest_calls:
     response_format: json
     response_translation:
       status: [ run_status ]
+    response_expectation:
+      - ['status', 'completed']
